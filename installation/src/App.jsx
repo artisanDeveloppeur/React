@@ -15,21 +15,48 @@ const PRODUCTS = [
 
 function App() {
 
+  const [showStockedOnly, setShowStockedOnly] = useState(false) //Checkbox
+  const [search, setSearch] = useState('')                      //Input
+
+
+  const visibleProducts = PRODUCTS.filter(product => {
+    //Checkbox stocked
+    if (showStockedOnly && !product.stocked) {
+      return false
+    }
+
+    //Input search
+    if (search && !product.name.toLowerCase().includes(search.toLowerCase())) {
+      console.log(search)
+      return false
+    }
+
+    return true
+  })
 
   return <>
     <h1>React.js : Liste de produit</h1>
     <div className="container my-3">
-      <SearchBar />
-      <ProductTable products={PRODUCTS} />
+      <SearchBar
+        search={search} onSearchChange={setSearch}
+        showStockedOnly={showStockedOnly} onStockedOnlyChange={setShowStockedOnly}
+      />
+      {/*<ProductTable products={PRODUCTS} />*/}
+      <ProductTable products={visibleProducts} />
     </div>
   </>
 }
 
-function SearchBar() {
+function SearchBar({ showStockedOnly, onStockedOnlyChange, search, onSearchChange }) {
   return <div>
     <div className="mb-3">
-      <Input value="" onChange={() => null} placeholder="Rechercher..." />
-      <Checkbox id="stocked" checked={false} onChange={() => null} label="N'afficher que les produits en stock" />
+      <Input value={search}
+        onChange={onSearchChange}
+        placeholder="Rechercher..." />
+      <Checkbox id="stocked"
+        checked={showStockedOnly}
+        onChange={onStockedOnlyChange}
+        label="N'afficher que les produits en stock" />
     </div>
   </div>
 }
