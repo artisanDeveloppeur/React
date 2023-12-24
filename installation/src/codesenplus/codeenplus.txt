@@ -1,0 +1,5 @@
+A collection of modern, server-safe React hooks – from the ui.dev team
+https://usehooks.com/
+
+Collection of essential React Hooks. Port of libreact.
+https://github.com/streamich/react-use
