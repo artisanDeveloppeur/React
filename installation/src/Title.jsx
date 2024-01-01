@@ -1,57 +1,27 @@
-import { Input } from "./components/forms/Input.jsx";
-import { Checkbox } from "./components/forms/Checkbox.jsx";
-import { useEffect, useState } from "react"
+
+import { useState } from "react"
+import { useDocumentTitle } from "./hooks/useDocumentTitle"
+import { Input } from "./components/forms/Input"
+
+
+
+
 
 
 function App() {
 
-  const [showInput, setShowInput] = useState(true)
 
+  const [name, setName] = useState('')
+
+  useDocumentTitle(name ? `Editer ${name}` : null)
 
   return <>
-    <h1>React.js : hook useEffect</h1>
-    <div className="container my-3 stack">
-      <Checkbox
-        id="titleshow"
-        checked={showInput}
-        onChange={setShowInput}
-        label="Afficher le champ titre"
-      />
+    <h1>React.js : hook personnalisé</h1>
+    <Input value={name} onChange={setName} label="Nom" />
 
-      {showInput && <EditTitle />}
-    </div>
   </>
 }
 
-function EditTitle() {
-  const [title, setTitle] = useState('')
-  //const [firtsName, setFirstname] = useState('')
 
-  useEffect(() => {
-    const originalTitle = document.title
-    return () => {
-      document.title = originalTitle
-    }
-  }, [])
 
-  useEffect(() => {
-    console.log(title)
-    document.title = title
-  }, [title]);
-
-  return <div className="vstack gap-2">
-    <Input
-      placeholder="Modifier le titre"
-      value={title}
-      onChange={setTitle}
-    />
-    {/*
-      <Input
-      placeholder="Prénom"
-      value={firtsName}
-      onChange={setFirstname}
-      />
-     */}
-  </div>
-}
 export default App
