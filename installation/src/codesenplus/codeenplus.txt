@@ -3,3 +3,6 @@ https://usehooks.com/
 
 Collection of essential React Hooks. Port of libreact.
 https://github.com/streamich/react-use
+
+Beautifully designed components that you can copy and paste into your apps. Accessible. Customizable. Open Source.
+https://ui.shadcn.com/
