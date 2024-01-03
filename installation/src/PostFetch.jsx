@@ -8,7 +8,7 @@ import { useFetch } from "./hooks/useFetch.js"
 
 function App() {
 
-  const { loading, data, errors } = useFetch('https://jsonplaceholder.typicode.com/posts?_limit=10&_delay=2000')
+  const { loading, data, error } = useFetch('https://jsonplaceholder.typicode.com/posts?_limit=10&_delay=2000')
 
 
   return <>
@@ -16,7 +16,7 @@ function App() {
     {loading && <div className="spinner-border" role="status">
       <span className="visually-hidden">Loading...</span>
     </div>}
-    {errors && <div className="alert alert-danger">{errors.toString()}</div>}
+    {error && <div className="alert alert-danger">{error.toString()}</div>}
     {data && <div>
       <ul>
         {data.map(post => (<li key={post.id}>{post.title}</li>))}

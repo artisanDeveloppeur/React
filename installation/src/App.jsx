@@ -15,14 +15,9 @@ function App() {
 
   return <>
     <Header page={page} />
-    <h1>React.js : Blog</h1>
-    <p>Page : {page}</p>
-    <p>
-      <a href="#">Home</a>
-      <a href="#post">Article</a>
-      <a href="#contact">Contact</a>
-    </p>
-    {pageContent}
+    <div className="container my-3">
+      {pageContent}
+    </div>
   </>
 }
 

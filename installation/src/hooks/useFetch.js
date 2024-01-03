@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 export function useFetch(url, options = {}) {
   const [loading, setLoading] = useState(true)
   const [data, setData] = useState(null)
-  const [errors, setErrors] = useState(null)
+  const [error, setError] = useState(null)
 
   useEffect(() => {
     fetch(url, {
@@ -20,11 +20,11 @@ export function useFetch(url, options = {}) {
     }).then(r => r.json()).then(data => {
       setData(data)
     }).catch((e) => {
-      setErrors(e)
+      setError(e)
     }).finally(() => {
       setLoading(false)
     })
   }, []);
 
-  return { loading, data, errors }
+  return { loading, data, error }
 }
