@@ -3,6 +3,7 @@ import { Contact } from "./pages/Contact.jsx"
 import { Single } from "./pages/Single.jsx"
 import { NotFound } from './pages/NotFound.jsx'
 import { useHashNavigation } from "./hooks/useHashNavigation.js"
+import { Header } from "./components/Header.jsx"
 
 
 
@@ -13,6 +14,7 @@ function App() {
   const pageContent = getPageContent(page)
 
   return <>
+    <Header page={page} />
     <h1>React.js : Blog</h1>
     <p>Page : {page}</p>
     <p>
