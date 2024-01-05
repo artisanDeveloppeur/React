@@ -8,7 +8,7 @@ import { useToggle } from "../hooks/useToggle.js";
 //import { Modal } from "../components/Modal.jsx";
 import { EditPostModal } from "./Single/EditPostModal.jsx";
 
-export function Single({ postId }) {
+export default function Single({ postId }) {
 
   const { data: post, loading, error, setData } = useFetch(`https://jsonplaceholder.typicode.com/posts/${postId}`)
   useDocumentTitle(post?.title)
