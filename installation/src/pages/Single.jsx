@@ -22,6 +22,14 @@ export function Single({ postId }) {
     return <Alert type="danger">{error.toString()}</Alert>
   }
 
+  //throw new Error();
+  /**
+   * APP 
+      <ErrorBoundary FallbackComponent={PageError}>
+        {pageContent}
+      </ErrorBoundary>
+   */
+
   const handleSave = (data) => {
     setData({
       ...post,
