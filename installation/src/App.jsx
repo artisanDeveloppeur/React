@@ -1,6 +1,8 @@
 import { Home } from "./pages/Home.jsx"
 import { Contact } from "./pages/Contact.jsx"
 //import { Single } from "./pages/Single.jsx"
+import { Todos } from "./pages/Todos.jsx"
+
 import { NotFound } from './pages/NotFound.jsx'
 import { useHashNavigation } from "./hooks/useHashNavigation.js"
 import { Header } from "./components/Header.jsx"
@@ -36,6 +38,9 @@ function LoadingCurrentComponent() {
 function getPageContent(page, param) {
   if (page === 'home') {
     return <Home />
+  }
+  if (page === 'todos') {
+    return <Todos />
   }
   if (page === 'contact') {
 
