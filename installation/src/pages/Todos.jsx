@@ -1,59 +1,21 @@
-import { useReducer } from "react"
+import { useTodos } from "../hooks/useTodo.js"
 
 
 export function Todos() {
 
 
+  const { todosNumber, visibleTodos, removeTodo, clearCompleted, toggleFilter, toggleTodo, showCompleted } = useTodos()
 
-  const [state, dispatch] = useReducer(reducer, {
-    showCompleted: true,
-    todos: [
-      { name: 'Comprendre JavaScript', checked: true },
-      { name: 'Utiliser npm', checked: true },
-      { name: 'Apprendre Reactjs', checked: false }
-    ]
+  console.log(visibleTodos)
 
-  })
 
-  const visibleTodos = state.showCompleted ? state.todos : state.todos.filter(t => !t.checked)
-
-  function reducer(state, action) {
-    if (action.type === 'REMOVE_TODO') {
-      return {
-        ...state,
-        todos: state.todos.filter(todo => todo !== action.payload)
-      }
-    }
-    if (action.type === 'TOGGLE_TODO') {
-      return {
-        ...state,
-        todos: state.todos.map(todo => todo === action.payload ? {
-          ...todo, checked: !todo.checked
-        } : todo)
-      }
-    }
-    if (action.type === 'CLEAR_COMPLETED') {
-      return {
-        ...state,
-        todos: state.todos.filter(todo => !todo.checked)
-      }
-    }
-    if (action.type === 'TOGGLE_FILTER') {
-      return {
-        ...state,
-        showCompleted: !state.showCompleted
-      }
-    }
-    //console.log({ state, action })
-    return state
-
-  }
   return <>
-    <h1 className="mb-3">hook useReducer : todos</h1>
+    <h1 className="mb-3">hook useReducer :  {todosNumber} tâches</h1>
+
     <p>
       <input type="checkbox"
-        checked={state.showCompleted}
-        onChange={() => dispatch({ type: 'TOGGLE_FILTER' })}
+        checked={showCompleted}
+        onChange={toggleFilter}
 
       />
       Afficher les tâches accomplies
@@ -64,17 +26,17 @@ export function Todos() {
 
       >
         <input type="checkbox"
-          onChange={() => dispatch({ type: 'TOGGLE_TODO', payload: todo })}
+          onChange={() => toggleTodo(todo)}
           checked={todo.checked}
         />
         {todo.name}
         <button
-          onClick={() => dispatch({ type: 'REMOVE_TODO', payload: todo })}>
+          onClick={() => removeTodo(todo)}>
           Supprimer
         </button>
       </li>))}
     </ul>
-    <button onClick={() => dispatch({ type: 'CLEAR_COMPLETED' })}>Supprimer les tâches accomplies</button>
+    <button onClick={clearCompleted}>Supprimer les tâches accomplies</button>
   </>
 }
 
