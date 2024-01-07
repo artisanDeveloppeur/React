@@ -1,14 +1,14 @@
-import "./../assets/css/slider.css"
+import "./../../assets/css/slider.css"
 import { useState } from "react";
 
 const images = [
-  "https://picsum.photos/600/400?random=1",
-  "https://picsum.photos/600/400?random=2",
-  "https://picsum.photos/600/400?random=3",
-  "https://picsum.photos/600/400?random=4",
-  "https://picsum.photos/600/400?random=5",
-  "https://picsum.photos/600/400?random=6",
-  "https://picsum.photos/600/400?random=7",
+  "https://picsum.photos/seed/img1/1000/400",
+  "https://picsum.photos/seed/img2/1000/400",
+  "https://picsum.photos/seed/img3/1000/400",
+  "https://picsum.photos/seed/img4/1000/400",
+  "https://picsum.photos/seed/img5/1000/400",
+  "https://picsum.photos/seed/img6/1000/400",
+
 ];
 
 export function Slider() {
@@ -24,7 +24,7 @@ export function Slider() {
 
   return (
     <div>
-      <h2>Project 1: Carousel</h2>
+      <h2>Project 1: Slider</h2>
       <div className="slider">
         <div className="left-arrow" onClick={prevSlide}>
           prev

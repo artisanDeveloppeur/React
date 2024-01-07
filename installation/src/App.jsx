@@ -2,7 +2,7 @@ import { Home } from "./pages/Home.jsx"
 import { Contact } from "./pages/Contact.jsx"
 //import { Single } from "./pages/Single.jsx"
 import { Todos } from "./pages/Todos.jsx"
-import { Slider } from "./pages/Slider.jsx"
+import { Images } from "./pages/Images.jsx"
 import { Faq } from "./pages/Faq.jsx"
 import { RandomQuote } from "./pages/Quotes/RandomQuote.jsx"
 
@@ -45,8 +45,8 @@ function getPageContent(page, param) {
   if (page === 'todos') {
     return <Todos />
   }
-  if (page === 'slider') {
-    return <Slider />
+  if (page === 'images') {
+    return <Images />
   }
   if (page === 'faq') {
     return <Faq />

@@ -28,7 +28,7 @@ export function Header({ page }) {
             <a className={activeClassIf(page === 'todos', 'nav-link')} href="#todos">Todos</a>
           </li>
           <li className="nav-item">
-            <a className={activeClassIf(page === 'slider', 'nav-link')} href="#slider">Slider</a>
+            <a className={activeClassIf(page === 'images', 'nav-link')} href="#images">Images</a>
           </li>
           <li className="nav-item">
             <a className={activeClassIf(page === 'faq', 'nav-link')} href="#faq">Faq</a>
