@@ -1,5 +1,6 @@
 import { useToggle } from "../hooks/useToggle.js"
 import { activeClassIf } from "../utils/classnames.js"
+import { Copyright } from "./Copyright.jsx"
 
 /**
  * 
@@ -12,7 +13,7 @@ export function Header({ page }) {
 
   return <nav className="navbar navbar-expand-lg bg-body-tertiary">
     <div className="container-fluid">
-      <a className="navbar-brand" href="#">Mon site</a>
+      <a className="navbar-brand" href="#">Mon site  <Copyright /></a>
       <button onClick={toggleExpanded} className="navbar-toggler" type="button"
         aria-controls="navbarNav" aria-expanded={expanded} aria-label="Toggle navigation">
         <span className="navbar-toggler-icon"></span>
