@@ -3,6 +3,7 @@ import { Contact } from "./pages/Contact.jsx"
 //import { Single } from "./pages/Single.jsx"
 import { Todos } from "./pages/Todos.jsx"
 import { Slider } from "./pages/Slider.jsx"
+import { Faq } from "./pages/Faq.jsx"
 
 import { NotFound } from './pages/NotFound.jsx'
 import { useHashNavigation } from "./hooks/useHashNavigation.js"
@@ -45,6 +46,9 @@ function getPageContent(page, param) {
   }
   if (page === 'slider') {
     return <Slider />
+  }
+  if (page === 'faq') {
+    return <Faq />
   }
   if (page === 'contact') {
 
