@@ -4,6 +4,7 @@ import { Contact } from "./pages/Contact.jsx"
 import { Todos } from "./pages/Todos.jsx"
 import { Slider } from "./pages/Slider.jsx"
 import { Faq } from "./pages/Faq.jsx"
+import { RandomQuote } from "./pages/Quotes/RandomQuote.jsx"
 
 import { NotFound } from './pages/NotFound.jsx'
 import { useHashNavigation } from "./hooks/useHashNavigation.js"
@@ -50,6 +51,11 @@ function getPageContent(page, param) {
   if (page === 'faq') {
     return <Faq />
   }
+
+  if (page === 'quote') {
+    return <RandomQuote />
+  }
+
   if (page === 'contact') {
 
     return <Contact />

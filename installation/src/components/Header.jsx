@@ -33,6 +33,9 @@ export function Header({ page }) {
             <a className={activeClassIf(page === 'faq', 'nav-link')} href="#faq">Faq</a>
           </li>
           <li className="nav-item">
+            <a className={activeClassIf(page === 'quote', 'nav-link')} href="#quote">Quote</a>
+          </li>
+          <li className="nav-item">
             <a className={activeClassIf(page === 'contact', 'nav-link')} href="#contact">Contact</a>
           </li>
         </ul>
