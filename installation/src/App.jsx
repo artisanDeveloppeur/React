@@ -5,6 +5,7 @@ import { Todos } from "./pages/Todos.jsx"
 import { Images } from "./pages/Images.jsx"
 import { Faq } from "./pages/Faq.jsx"
 import { RandomQuote } from "./pages/Quotes/RandomQuote.jsx"
+import { Search } from "./pages/Search.jsx"
 
 import { NotFound } from './pages/NotFound.jsx'
 import { useHashNavigation } from "./hooks/useHashNavigation.js"
@@ -47,6 +48,9 @@ function getPageContent(page, param) {
   }
   if (page === 'images') {
     return <Images />
+  }
+  if (page === 'search') {
+    return <Search />
   }
   if (page === 'faq') {
     return <Faq />
